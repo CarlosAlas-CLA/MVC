@@ -1,0 +1,117 @@
+﻿@model MVC.EmailAddress
+
+
+
+@{
+
+    ViewBag.Title = "Edit";
+
+}
+
+
+
+<h2>Edit</h2>
+
+
+
+<div>
+
+
+
+    <hr />
+
+    <dl class="dl-horizontal"></dl>
+
+</div>  <di>
+
+    @using (Html.BeginForm())
+
+    {
+
+        @Html.HiddenFor(f => f.EmailID)
+
+
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.Contact.FirstName)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.TextBoxFor(m => m.Contact.FirstName)
+
+        </dd>
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.Contact.LastName)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.TextBoxFor(m => m.Contact.LastName)
+
+        </dd>
+
+
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.Email)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.TextBoxFor(m => m.Email)
+
+        </dd>
+
+
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.EmailType)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.EnumDropDownListFor(m => m.EmailType)
+
+        </dd>
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+
+            <input type="submit" value="Submit" class="btn btn-default" /> |
+
+
+
+        </div>
+
+    }
+
+</di>
+
+<p>
+
+
+
+    @Html.ActionLink("Back to List", "Index")
+
+
+
+</p>

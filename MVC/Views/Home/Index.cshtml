@@ -1,0 +1,124 @@
+﻿
+@model IEnumerable<MVC.EmailAddress>
+
+@{
+
+    ViewBag.Title = "EditContacts";
+
+}
+
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+
+
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+
+
+
+</head>
+
+<body>
+
+
+
+    <h2>Choose from the two options</h2>
+
+    <nav>
+
+        <button> @Html.ActionLink("Create request", "CreateContacts", "Home") </button>
+
+        <button>@Html.ActionLink("Delete request", "ShowContacts", "Home")</button>
+
+    </nav>
+
+
+
+
+
+    <table class="table">
+
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.Contact.FirstName)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.Email)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.EmailType)
+
+            </th>
+
+            <th></th>
+
+        </tr>
+
+
+
+        @foreach (var item in Model)
+
+        {
+
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Contact.FirstName)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Email)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.EmailType)
+
+                </td>
+
+                <td>
+
+
+
+
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmailID }) |
+
+                    @Html.ActionLink("Details", "Details", new { id = item.EmailID }) |
+
+
+
+                </td>
+
+            </tr>
+
+        }
+
+
+
+    </table>
+
+</body>
+
+</html>

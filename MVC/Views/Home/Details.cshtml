@@ -1,0 +1,99 @@
+﻿@model MVC.EmailAddress
+
+
+
+@{
+
+    ViewBag.Title = "Details";
+
+}
+
+
+
+<h2>Details</h2>
+
+
+
+<div>
+
+
+
+    <hr />
+
+    <dl class="dl-horizontal">
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.Contact.FirstName)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.DisplayFor(model => model.Contact.FirstName)
+
+        </dd>
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.Contact.LastName)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.DisplayFor(model => model.Contact.LastName)
+
+        </dd>
+
+
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.Email)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.DisplayFor(model => model.Email)
+
+        </dd>
+
+
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.EmailType)
+
+        </dt>
+
+
+
+        <dd>
+
+            @Html.DisplayFor(model => model.EmailType)
+
+        </dd>
+
+
+
+    </dl>
+
+</div>
+
+<p>
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ContactID }) |
+
+    @Html.ActionLink("Back to List", "Index")
+
+
+
+</p>

@@ -1,0 +1,48 @@
+﻿@model MVC.EmailAddress
+
+<!DOCTYPE html>
+
+
+
+
+<meta name="viewport" content="width=device-width" />
+
+<title>DeleteContacts</title>
+
+<html>
+
+
+
+<body>
+
+    <h1>Are you sure you want to delete this?</h1>
+
+    <h2>Information</h2>
+    <di>
+
+
+
+
+        @using (Html.BeginForm())
+
+        {
+
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+
+                @Html.ActionLink("Back Home ", "Index", "Home")
+
+            </div>
+
+        }
+
+    </di>
+
+
+
+</body>
+
+</html>

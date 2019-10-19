@@ -1,0 +1,99 @@
+﻿@model  IEnumerable<MVC.EmailAddress>
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>ShowContacts</title>
+
+</head>
+
+<body>
+
+
+
+    <table class="table">
+
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.Contact.FirstName)
+
+            </th>
+
+            <th>@Html.DisplayNameFor(model => model.Contact.LastName)</th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.Email)
+
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.EmailType)
+
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+
+        {
+
+            <tr>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Contact.FirstName)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(ModelItem => item.Contact.LastName)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Email)
+
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.EmailType)
+
+                </td>
+
+
+
+
+
+                <td>      <button>@Html.ActionLink("Delete", "DeleteContacts", new { id = item.ContactID })    </button>  </td>
+
+
+            </tr>
+
+        }
+
+    </table>
+
+    <p>
+
+        <button> @Html.ActionLink("Create request ", "CreateContacts", "Home")</button>
+
+        <button>@Html.ActionLink("Return Home", "Index", "Home")</button>
+
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+﻿@model MVC.EmailAddress
+
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>title</title>
+</head>
+
+<body>
+
+
+
+    <p>
+        <h1>Hello please fill out the form to be contacted</h1>
+        <h1>Thank You</h1>
+
+        @using (Html.BeginForm("CreateContacts", "Home", FormMethod.Post))
+
+        {
+
+            <table>
+
+                <tr>
+
+                    <td>Enter FirstName: </td>
+
+                    <td>@Html.TextBoxFor(m => m.Contact.FirstName)</td>
+                    <td class="editor-field">
+                      
+                        @Html.ValidationMessageFor(model => model.Contact.FirstName)
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>Enter LastName </td>
+
+                    <td>@Html.TextBoxFor(m => m.Contact.LastName)</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Enter Email: </td>
+
+                    <td>@Html.TextBoxFor(m => m.Email)</td>
+                    <td class="editor-field">
+
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>Enter EmailType: </td>
+
+                    <td>@Html.EnumDropDownListFor(m => m.EmailType)</td>
+              
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Submit" class="btn btn-default" /></td>
+
+
+                </tr>
+
+            </table>
+
+        }
+
+    </p>
+
+    <button>   @Html.ActionLink("Back Home ", "Index", "Home")</button>
+
+    <div>
+
+    </div>
+
+
+
+</body>
+
+</html>
